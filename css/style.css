@@ -52,6 +52,7 @@ div#container {
 
 .right {
     float: right;
+    margin-top: 50px;
 }
 
 #main-content {
@@ -295,6 +296,26 @@ button:hover:before {
 @media screen and (max-width: 500px) {
     h3 {
         font-size: 16px !important;
+    }
+    .left {
+        width: 100% !important;
+        float: none !important;
+        text-align: center;
+        margin-bottom: 26px;
+        margin-top: 20px;
+    }
+    .right {
+        float: none !important;
+        margin-top: 0px;
+    }
+    div#container {
+        margin: 0 auto;
+        max-width: 100%;
+        margin: 0px 0%;
+        padding: 0px;
+    }
+    #h500 {
+        display: none;
     }
 }
 
