@@ -1,0 +1,395 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <title>HỘI THẢO KHOA HỌC LUẬT QUAN HỆ QUỐC TẾ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <style>
+         :root {
+            --accent: #F18260;
+            --purple: #252431;
+        }
+        
+        .form-container {
+            position: relative;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 350px;
+            min-height: 300px;
+            margin: 0 auto;
+            box-shadow: 0 10px 50px 0 #ccc;
+            margin-bottom: 2rem;
+        }
+        
+        .is-hidden {
+            display: none !important;
+        }
+        
+        a {
+            display: block;
+            margin: 0 auto;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            margin-left: 5px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+        
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes dash {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -35;
+            }
+            100% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -124;
+            }
+        }
+        
+        .loading {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .loading-spinner svg {
+            position: relative;
+            animation: rotate 2s linear infinite;
+            height: 50px;
+            width: 50px;
+        }
+        
+        .loading-spinner circle {
+            stroke: var(--accent);
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: dash 1.5s ease-in-out infinite;
+        }
+        
+        p.js-success-message {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px 0px;
+        }
+        
+        table.dtable th,
+        table.dtable td,
+        table.ntable th,
+        table.ntable td {
+            border: 1px #ccc solid;
+            border-collapse: collapse;
+            padding: 5px;
+            font-weight: normal;
+        }
+        
+        TABLE {
+            margin-bottom: 5px;
+        }
+        
+        table.dtable,
+        table.ntable {
+            border: 1px #ccc solid;
+            border-collapse: collapse;
+            padding: 5px;
+            width: 100%;
+        }
+        
+        TH {
+            background: #f5f5f5;
+            font-style: normal;
+            color: #167ec2;
+        }
+        
+        TD {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        
+        .btn-tuyendung {
+            float: right;
+            border: 2px solid #ae3c33;
+            border-radius: 10px;
+            padding: 10px;
+            color: red;
+        }
+        
+        .stt {
+            font-weight: bold;
+            color: white;
+        }
+        
+        #hdth {
+            height: 50px;
+        }
+        
+        #hdth th {
+            color: white;
+            background: #ed1b2f;
+        }
+        
+        .trchan {
+            background-color: #0a8075;
+        }
+        
+        .trle {
+            background-color: #009688;
+        }
+        
+        .trchan a,
+        .trle a {
+            color: white;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="left">
+                <img src="images/logo.png">
+            </div>
+            <div class="right" style="font-size:9px" id="mb">
+                <h2 style="color: blue; font-weight: bold;text-align: center">HỘI THẢO KHOA HỌC</h2>
+                <h2 style="color: blue; font-weight: bold;text-align: center">KHOA LUẬT - QUAN HỆ QUỐC TẾ</h2>
+            </div>
+        </div>
+        <div id="main-content">
+            <h1 style="text-align:center; color: red; font-weight: bold">HỘI THẢO KHOA HỌC SINH VIÊN</h1>
+            <h2 style="text-align:center"><span style="color:#f3b80d">SINH VIÊN VỚI VIỆC ĐẢM BẢO THỰC HIỆN QUY ĐỊNH CỦA LUẬT GIAO THÔNG ĐƯỜNG BỘ</span></h2>
+            <h3 style="text-align:center; color: #18a7ef; font-weight: bold; font-style: italic">TP.HCM, Ngày 30 tháng 05 năm 2020</h3>
+            <br />
+            <h1 style="text-align:center; color: red; font-weight: bold">DANH SÁCH BÀI BÁO</h1>
+
+            <div class="col-sm-12" style="overflow-x: auto">
+                <table class="table" style="width: 100%">
+                    <thead>
+                        <tr id="hdth">
+                            <th style="width: 70px !important;">#</th>
+                            <th>BÀI BÁO</th>
+                            <th style="width: 250px;">NHÓM TÁC GIẢ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">1</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1PUYsAZCQXG7y2i_A-EDr0VHwps86eT_t/view">AN TOÀN GIAO THÔNG ĐƯỜNG BỘ Ở NÔNG THÔN VÀ THÀNH THỊ,
+                                    NHỮNG BẤT CẬP VÀ GIẢI PHÁP</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1PUYsAZCQXG7y2i_A-EDr0VHwps86eT_t/view">MS-01</a>
+                            </td>
+                        </tr>
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">2</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1cJawZlQDWaeVu8i_1zGy7XZl0xVfdFcZ/view">PHÂN TÍCH ĐÁNH GIÁ MỘT SỐ QUY ĐỊNH VÀ NHỮNG BẤT CẬP TRONG
+                                    THỰC HIỆN LUẬT GIAO THÔNG ĐƯỜNG BỘ NĂM 2008
+                                    </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1cJawZlQDWaeVu8i_1zGy7XZl0xVfdFcZ/view">MS-02</a>
+                            </td>
+                        </tr>
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">3</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1xnAiSBbltEMChIGv0sVJLCwLfYa0S_pF/view">KHI THAM GIA GIAO THÔNG CẦN CHẤP HÀNH NGHIÊM CHỈNH LUẬT AN
+                                    TOÀN GIAO THÔNG
+                                    </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1xnAiSBbltEMChIGv0sVJLCwLfYa0S_pF/view">MS-03</a>
+                            </td>
+                        </tr>
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">4</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1eNt_xUb1Nw6TPOVnjXYbik9JWraqvtGz/view">CHUẨN MỰC ỨNG XỬ GIỮA CHỦ THỂ CÓ THẨM QUYỀN XỬ LÝ VI PHẠM
+                                    GIAO THÔNG VỚI BÊN VI PHẠM</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1eNt_xUb1Nw6TPOVnjXYbik9JWraqvtGz/view">MS-04</a>
+                            </td>
+                        </tr>
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">5</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1YzidYe-tp_QFO4fGbUyI2UcmVXbEWALg/view">PHÂN TÍCH NGUYÊN NHÂN & HẬU QUẢ CỦA TAI NẠN GIAO THÔNG</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1YzidYe-tp_QFO4fGbUyI2UcmVXbEWALg/view">MS-05</a>
+                            </td>
+                        </tr>
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">6</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/17mROhFMayPPgds5ZvzmFcIlZADH54CT-/view">PHÁP LUẬT VỀ QUẢN LÝ SỬ DỤNG RƯỢU, BIA KHI THAM GIA GIAO
+                                    THÔNG – THỰC TIỄN VÀ GIẢI PHÁP </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/17mROhFMayPPgds5ZvzmFcIlZADH54CT-/view">MS-06</a>
+                            </td>
+                        </tr>
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">7</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1vuZ9DK-rYuR2kH_pCqi5i4tFnqI29KV5/view">SO SÁNH MỘT SỐ QUY ĐỊNH TRONG LUẬT GIAO THÔNG ĐƯỜNG BỘ CỦA
+                                    VIỆT NAM VỚI CÁC NƯỚC TRÊN THẾ GIỚI
+                                    </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1vuZ9DK-rYuR2kH_pCqi5i4tFnqI29KV5/view">MS-07</a>
+                            </td>
+                        </tr>
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">8</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/19Um4XdciPTYWEO17ELMJ6GgZPPRy7JE3/view">BẤT CẬP TRONG QUY TRÌNH, THỦ TỤC XỬ LÝ VÀ GIẢI QUYẾT CÁC VỤ
+                                    VI PHẠM GIAO THÔNG ĐƯỜNG BỘ
+                                    </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/19Um4XdciPTYWEO17ELMJ6GgZPPRy7JE3/view">MS-08</a>
+                            </td>
+                        </tr>
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">9</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1juxca0lJiGHv4Tr5VYENqH-iEzvtJEHl/view">Ý THỨC CỦA NGƯỜI THAM GIA GIAO THÔNG VÀ VIỆC THỰC HIỆN
+                                    VĂN HÓA GIAO THÔNG VĂN MINH</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1juxca0lJiGHv4Tr5VYENqH-iEzvtJEHl/view">MS-09</a>
+                            </td>
+                        </tr>
+
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">10</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1tU5wwSdBYRmiisURUcMWf3radP5rtvYP/view">Ý THỨC CỦA NGƯỜI THAM GIA GIAO THÔNG VĂN MINH</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1tU5wwSdBYRmiisURUcMWf3radP5rtvYP/view">MS-10</a>
+                            </td>
+                        </tr>
+
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">11</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1jt2fOTzgmtgYgMaEUlnjpo-yiUMQj2K-/view">Ý THỨC CỦA NGƯỜI THAM GIA GIAO THÔNG VÀ THỰC HIỆN VĂN HÓA
+                                    GIAO THÔNG VĂN MINH</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1jt2fOTzgmtgYgMaEUlnjpo-yiUMQj2K-/view">MS-11</a>
+                            </td>
+                        </tr>
+
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">12</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1z11vJfs2NJdvOxjXQawTXtecuYERiCAl/view">QUY TRÌNH KIỂM TRA, XỬ LÝ VI PHẠM GIAO THÔNG CỦA CÁ NHÂN, TỔ
+                                    CHỨC CÓ THẨM QUYỀN</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1z11vJfs2NJdvOxjXQawTXtecuYERiCAl/view">MS-12</a>
+                            </td>
+                        </tr>
+
+                        <tr class="trle">
+                            <td align="center">
+                                <span class="stt">13</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1U6b3qAuG9IKy76lAft3fJVdqxaqwE-uk/view">VĂN HOÁ GIAO THÔNG VÀ NHỮNG VẤN ĐỀ SUY NGẪM
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1U6b3qAuG9IKy76lAft3fJVdqxaqwE-uk/view">MS-13</a>
+                            </td>
+                        </tr>
+
+                        <tr class="trchan">
+                            <td align="center">
+                                <span class="stt">14</span>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1nEZx2s9-Dj_D6X2pqcvgnvI9e-fb_1sz/view">PHÂN TÍCH ĐÁNH GIÁ MỘT SỐ QUY ĐỊNH TRONG LUẬT GIAO THÔNG
+                                    ĐƯỜNG BỘ HIỆN NAY</a>
+                            </td>
+                            <td>
+                                <a href="https://drive.google.com/file/d/1nEZx2s9-Dj_D6X2pqcvgnvI9e-fb_1sz/view">MS-14</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <img src="images/bc.png" style="max-width:50%" />
+        </div>
+        <p style="text-align:center;color: #0072bc !important; font-weight:bold">&copy; 2020 KHOA LUẬT - QUAN HỆ QUỐC TẾ</p>
+        <p>
+        </p>
+    </div>
+</body>
+
+</html>
