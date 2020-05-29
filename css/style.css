@@ -292,21 +292,9 @@ button:hover:before {
     }
 }
 
-@media screen and (max-width: 420px) {
-    #mb {
-        font-size: 11px !important;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    #mb {
-        font-size: 14px !important;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    #mb {
-        font-size: 11px !important;
+@media screen and (max-width: 500px) {
+    h3 {
+        font-size: 16px !important;
     }
 }
 
